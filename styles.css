@@ -5,7 +5,7 @@
   --Light-pink: hsl(275, 100%, 97%);
   --Grayish-purple: hsl(293, 37%, 44%);
   --Dark-purple: hsl(292, 42%, 14%);
-  --container-box-shadow: hsla(0, 0%, 100%, 0.1);
+  --container-box-shadow: hsla(0, 0%, 32%, 0.1);
   --font-color: hsl(293, 19%, 46%);
 }
 * {
@@ -49,15 +49,18 @@ body::before {
 }
 h1 {
   font-size: 2rem;
+  font-weight: 800;
   color: var(--Dark-purple);
+  margin-bottom: 1rem;
 }
 #faq-heading span img {
   height: 1.5rem;
   width: 1.5rem;
-  margin-right: 2rem;
+  margin: 0 2rem 0 0.5rem;
 }
 .faq-item {
   margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--Light-pink);
 }
 
 button {
@@ -72,8 +75,7 @@ button {
   text-align: left;
   color: var(--Dark-purple);
   cursor: pointer;
-  padding: 0.625rem;
-  padding-right: 2rem;
+  padding: 0.625rem 3rem 0.625rem 0.625rem;
   outline: none;
   position: relative;
   transition: transform 0.5s ease;
@@ -82,7 +84,7 @@ button::after {
   content: url(./assets/images/icon-plus.svg);
   font-size: 1.5rem;
   position: absolute;
-  right: 1rem;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.5s ease-in-out;
@@ -103,18 +105,18 @@ button:active {
   color: var(--Dark-purple);
 }
 .faq-answer {
+  text-align: justify;
   max-height: 0;
   overflow: hidden;
   color: var(--font-color);
-  padding-left: 0.625rem;
-  transition: all 0.5s ease-in-out;
   opacity: 0;
-  margin-top: 0.625rem;
+  padding: 0 0.625rem;
+  margin: 1rem 0;
+  transition: all 0.5s ease-in-out;
 }
 
 .faq-answer.show {
   opacity: 1;
-
   animation: fade 1s ease-in-out;
 }
 body::after {
@@ -131,7 +133,7 @@ body::after {
 @keyframes fade {
   from {
     opacity: 0;
-    transform: translateY(-00.625rem);
+    transform: translateY(-0.625rem);
   }
   to {
     opacity: 1;
